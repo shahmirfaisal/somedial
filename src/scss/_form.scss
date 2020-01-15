@@ -1,0 +1,67 @@
+%btn-input {
+  width: 100%;
+  font-family: "Montserrat";
+  padding: 0.9rem 1.8rem;
+  border-radius: 100px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.signup {
+  margin-top: 2rem;
+}
+
+.login {
+  @extend .signup;
+}
+
+.form {
+  max-width: 42rem;
+  margin: 4rem auto;
+  padding: 0 2rem;
+
+  &__error {
+    font-size: 1.6rem;
+    margin-bottom: 1rem;
+    text-align: center;
+    font-weight: 600;
+    color: $error-color;
+  }
+
+  &__input {
+    @extend %btn-input;
+
+    border: 0.6px solid rgba(0, 0, 0, 0.2);
+    margin-bottom: 1rem;
+  }
+
+  &__btn {
+    @extend %btn-input;
+
+    border: none;
+    background-color: $primary-color;
+    color: white;
+    font-weight: 600;
+    letter-spacing: 0.04rem;
+    margin-top: 1rem;
+    cursor: pointer;
+  }
+
+  &__additional {
+    text-align: center;
+    font-size: 1.4rem;
+    margin-top: 2rem;
+
+    .link {
+      text-decoration: none;
+      color: black;
+    }
+
+    span {
+      font-weight: 600;
+      cursor: pointer;
+      &:hover {
+        color: $primary-color;
+      }
+    }
+  }
+}

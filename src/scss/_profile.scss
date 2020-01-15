@@ -1,0 +1,158 @@
+.profile {
+  display: flex;
+  align-items: flex-start;
+  padding: 2rem 1.4rem;
+
+  &__info {
+    max-width: 31rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.2);
+    align-self: stretch;
+    padding: 0 2rem 0 1rem;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    position: relative;
+  }
+
+  &__name {
+    font-size: 2.1rem;
+    margin: 1rem 0;
+  }
+
+  &__address {
+    margin: 1.6rem 0;
+    display: flex;
+    align-items: center;
+    font-size: 1.5rem;
+
+    i {
+      color: $primary-color;
+      margin-right: 0.7rem;
+      font-size: 1.8rem;
+    }
+
+    p {
+    }
+  }
+
+  &__bio {
+    margin: 1rem 0;
+    display: flex;
+    align-items: flex-start;
+    font-size: 1.6rem;
+
+    h4 {
+      margin-right: 0.7rem;
+    }
+
+    p {
+      font-size: 1.4rem;
+      word-spacing: 0.1rem;
+    }
+  }
+
+  &__bio-change {
+    margin-top: 0.5rem;
+    color: $primary-color;
+    font-weight: 600;
+    font-size: 1.4rem;
+    text-decoration: underline;
+    cursor: pointer;
+    display: inline-block;
+
+    &:hover {
+      color: darken($primary-color, 10%);
+    }
+  }
+
+  &__posts {
+    flex-grow: 1;
+  }
+
+  .caption::after {
+    content: "Change Pic";
+    position: absolute;
+    z-index: 2;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(43, 43, 43);
+  }
+  figure {
+    position: relative;
+    width: 14rem;
+    height: 14rem;
+    cursor: pointer;
+    border-radius: 50%;
+
+    figcaption {
+      position: absolute;
+      z-index: 2;
+      color: white;
+      font-size: 1.3rem;
+      font-weight: 600;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(43, 43, 43, 0.521);
+      border-radius: 50%;
+      clip-path: circle(0% at 0% 100%);
+      transition: clip-path 0.3s ease-in;
+
+      label {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+      }
+    }
+
+    &:hover > figcaption {
+      clip-path: circle(150% at 0% 100%);
+    }
+  }
+
+  &__no-post {
+    font-size: 1.5rem;
+    text-align: center;
+    margin-top: 3rem;
+  }
+
+  input {
+    visibility: hidden;
+    pointer-events: none;
+  }
+
+  @media (max-width: 800px) {
+    & {
+      flex-direction: column;
+      align-items: center;
+
+      figure {
+        width: 12rem;
+        height: 12rem;
+      }
+
+      &__info {
+        border: none;
+        margin-bottom: 8rem;
+      }
+
+      &__posts {
+        flex-grow: 0;
+        width: 100%;
+      }
+    }
+  }
+}
+
+// .profile__posts.skeleton-posts {
+//   flex-basis: 100%;
+// }

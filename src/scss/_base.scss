@@ -1,0 +1,140 @@
+$primary-color: #10c1e6;
+$error-color: rgb(255, 52, 52);
+
+html {
+  font-size: 62.5%;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  &::-webkit-scrollbar {
+    width: 2rem;
+  }
+
+  &::-webkit-scrollbar-track {
+    box-shadow: inset 0px 0 2px rgba(0, 0, 0, 1);
+    border: 1px solid $primary-color;
+    border-radius: 100px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: linear-gradient(
+      to bottom,
+      $primary-color,
+      lighten($primary-color, 20%)
+    );
+    border-radius: 100px;
+  }
+
+  font-family: "Montserrat", -apple-system, BlinkMacSystemFont, "Segoe UI",
+    "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  @media (max-width: 616px) {
+    & {
+      padding-bottom: 60px;
+    }
+  }
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+input,
+button,
+textarea {
+  outline: none;
+  font-family: "Montserrat", sans-serif;
+}
+
+textarea {
+  resize: none;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+// Helper Classes
+.section-heading {
+  font-size: 2.4rem;
+  text-align: center;
+  font-weight: 600;
+}
+
+.home {
+  margin: 3rem 0;
+  padding: 0 1.5rem;
+}
+
+.backdrop {
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 100;
+}
+
+.lds-ring {
+  display: inline-block;
+  position: fixed;
+  width: 80px;
+  height: 80px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 500;
+}
+.lds-ring div {
+  box-sizing: border-box;
+  display: block;
+  position: absolute;
+  width: 64px;
+  height: 64px;
+  margin: 8px;
+  border: 8px solid $primary-color;
+  border-radius: 50%;
+  animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+  border-color: $primary-color transparent transparent transparent;
+}
+.lds-ring div:nth-child(1) {
+  animation-delay: -0.45s;
+}
+.lds-ring div:nth-child(2) {
+  animation-delay: -0.3s;
+}
+.lds-ring div:nth-child(3) {
+  animation-delay: -0.15s;
+}
+@keyframes lds-ring {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.error-message {
+  text-align: center;
+  font-size: 1.6rem;
+  margin-top: 3rem;
+  opacity: 0.9;
+}
+
+.btn-hover:hover {
+  background-color: darken($primary-color, 3%);
+}
